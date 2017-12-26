@@ -33,8 +33,8 @@ git clone https://github.com/sharmasoumyadip/hpdfweekone.git
 cd hpdfweekone
 npm install
 ```
-This install the required dependencies for the app.
-** To Run the app type **
+This installs the required dependencies for the app.
+**To Run the app type**
 ```
 node app.js
 ```
@@ -59,6 +59,9 @@ The app should run on (http://localhost:8000)[http://localhost:8000] on local Ma
   > At http://localhost:8000/html
   It responds with a html file
 - Task 7
-  >At http://localhost:8080/input
+  >At http://localhost:8000/input
   It responds with a text box and submit button, which sends the data as POST to a [endpoint](http://localhost:8080/input).
   This endpoint logs the recieved data to stdout.
+
+
+**Report issues [Here](https://github.com/sharmasoumyadip/hpdfweekone/issues)**
