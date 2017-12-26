@@ -79,10 +79,10 @@ app.get('/input',function (req, res) {
 });
 
 app.post('/submit', function (req,res) {
-
-    res.send('<p> The Text you Entered is: ' + req.body.textBox + '<br> <a href="/input">CLICK HERE TO ENTER A name Again</a>');
+    console.log(req.body.textBox);
+    res.redirect('/input');
 });
 
 app.listen(app.get('port'), function () {
     console.log("APP RUNNING ON http://localhost:" + app.get('port'));
-})
+});
