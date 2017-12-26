@@ -16,7 +16,7 @@ var requests = [{
 }, {
     url: 'https://jsonplaceholder.typicode.com/posts',
 
-}];
+}]; //Iterable input for .map function, array of urls
 
 app.get('/', function (req, res) {
     res.send('HELLO WORLD - Soumyadip');
@@ -27,13 +27,14 @@ app.get('/authors',function (req,res) {
         return request(obj).then(function(body) {
             return JSON.parse(body);
         })
-    }).then(function (body) {
+    }).then(function (body) { //body is array JSON fetched from request to above two url
         var postCount = ''
-        for(var i in body[0]){
+        for(var i in body[0]){ // body[0] is JSON response fetched from request to 1st url, i.e. list of users
             var count = 0;
-            for(var j in body[1]){
-                if(body[0][i].id === body[1][j].userId){
-                    count++
+            for(var j in body[1]){ // body[1] is JSON response fetched from request to 2nd url, i.e. list of posts
+                if(body[0][i].id === body[1][j].userId){ // checking if userid in user list equals to the userid in posts list
+                    count++; // incrementing count for finding userid of a particular user in the list of posts
+                             //counting the posts for each user
                 }
 
             }
