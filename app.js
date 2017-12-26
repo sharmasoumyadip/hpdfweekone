@@ -1,8 +1,13 @@
 var express = require('express');
 var Promise = require('bluebird');
-var request = require("request-promise");
-
+var request = require('request-promise');
+var cookieParser = require('cookie-parser')
+var bodyParser = require('body-parser')
+var path = require('path');
 var app = express();
+
+app.use(cookieParser());
+app.use(bodyParser());
 
 app.set('port',8000);
 
@@ -39,6 +44,42 @@ app.get('/authors',function (req,res) {
     }).catch(function (err) {
         res.send("OOPS! Something Went Wrong");
     });
+});
+
+app.get('/setcookie', function (req, res) {
+   res.cookie('name','Soumyadip');
+   res.cookie('age',19);
+   res.send('Cookies have been set');
+});
+
+app.get('/getcookie', function (req, res) {
+    res.send('Cookie name: name, value: '+ req.cookies.name+ '<br> Cookie name: age, value: '+ req.cookies.age);
+});
+
+app.get('/robots.txt',function (req,res) {
+   res.status(403).send("YOUR REQUEST IS DENIED");
+});
+
+app.get('/html', function (req,res) {
+    res.sendFile(path.join(__dirname ,'ui' ,'index.html'));
+});
+
+app.get('/input',function (req, res) {
+    var endPoint = '/submit';
+    var inputBox = `
+    <form action="${endPoint}" method="post">
+    <label for="box" >Name</label>
+    <input type="text" id="box" name="textBox" placeholder="Enter Your Text Here">
+    <button type="submit">Submit</button>    
+    </form>
+    `;
+    res.send(inputBox);
+
+});
+
+app.post('/submit', function (req,res) {
+
+    res.send('<p> The Text you Entered is: ' + req.body.textBox + '<br> <a href="/input">CLICK HERE TO ENTER A name Again</a>');
 });
 
 app.listen(app.get('port'), function () {
