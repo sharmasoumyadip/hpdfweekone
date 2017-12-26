@@ -1,0 +1,29 @@
+{
+  "name": "hpdfweekone",
+  "version": "1.0.0",
+  "description": "hpdf task for week one",
+  "main": "app.js",
+  "scripts": {
+    "test": "console.log('Hello World');"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharmasoumyadip/hpdfweekone.git"
+  },
+  "keywords": [
+    "HPDF"
+  ],
+  "author": "sharmasoumyadip@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharmasoumyadip/hpdfweekone/issues"
+  },
+  "homepage": "https://github.com/sharmasoumyadip/hpdfweekone#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "express": "^4.16.2",
+    "path": "^0.12.7",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
