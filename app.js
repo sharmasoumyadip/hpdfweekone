@@ -53,7 +53,7 @@ app.get('/setcookie', function (req, res) {
    res.send('Cookies have been set');
 });
 
-app.get('/getcookie', function (req, res) {
+app.get('/getcookies', function (req, res) {
     res.send('Cookie name: name, value: '+ req.cookies.name+ '<br> Cookie name: age, value: '+ req.cookies.age);
 });
 
