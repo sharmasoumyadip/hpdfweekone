@@ -12,7 +12,7 @@ This is simple project, for tasks of HPDF weekone.
     "request-promise": "^4.2.2"
     
 ## Running locally
-### TEST NODE and TEST NPM
+### Test node and test npm
 Make sure you have [Nodejs](https://nodejs.org/en/) installed.
 To see if Node is installed, open the Windows Command Prompt, Powershell or a similar command line tool, and type
 ```
@@ -40,9 +40,9 @@ node app.js
 ```
 The app should run on (http://localhost:8000)[http://localhost:8000] on local Machine.
 
-## HPDF TASKS
-- Task one:  
-  > At http://localhost:8000, it responds with a simple simple "Hello World - Soumyadip"
+## HPDF 
+- Task one:  tasks
+  > At http://localhost:8000, it responds with a simple simple "Hello World - Soumyadip"
 - Task 2
   > At http://localhost:8000/authors
     It fetches a list of authors and post from two different request two different REST API.
